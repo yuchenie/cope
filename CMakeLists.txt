@@ -45,7 +45,7 @@ pico_enable_stdio_uart(cope 0)
 pico_enable_stdio_usb(cope 0)
 
 # Add the standard library to the build
-target_link_libraries(cope pico_stdlib pico_multicore pico_bootsel_via_double_reset hardware_pwm hardware_irq hardware_adc)
+target_link_libraries(cope pico_stdlib pico_bootsel_via_double_reset pico_multicore pico_bootsel_via_double_reset hardware_pwm hardware_irq hardware_adc)
 
 # Add the standard include files to the build
 target_include_directories(cope PRIVATE
