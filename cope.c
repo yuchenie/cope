@@ -1,3 +1,8 @@
+/*
+ * This file contains the implementation of the motor control system.
+ * It handles the PWM signals, ADC readings, and UART communication.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -10,13 +15,14 @@
 #include "hardware/uart.h"
 #include "pico/time.h"
 
+// UART to Pi. Handles sending sensor data.
 #define UART_ID uart0
 #define BAUD_RATE 115200
 #define LED 25
 
+// Hall sensor inputs
 #define NUM_INPUTS 3
 const uint input_pins[NUM_INPUTS] = {13, 14, 15};
-const uint period_us = 50;
 
 #define PWM_TEST 16
 uint slice_test;
